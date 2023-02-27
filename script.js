@@ -3,11 +3,7 @@
 // in the html.
 
 // TODO: Add code to display the current date in the header of the page.
-var now = dayjs() {
-  dayjs().format(dddd, MMMM D	)
-};
-
-$(function () {
+$("#currentDay").text(moment().format(MMMM, D, YYYY));  
   
 
   // TODO: Add a listener for click events on the save button. This code should
@@ -28,4 +24,4 @@ $(function () {
   // attribute of each time-block be used to do this?
   //
 
-});
+
