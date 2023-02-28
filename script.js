@@ -1,19 +1,22 @@
 // html and css first
+setInterval(function() {
+  $('#time-display').text(dayjs().format('MMM D YYYY, h:mm:ss'));}, 1000);
+  function checkCurrentHour() {}
 
 
 // TODO: Add code to display the current date in the header of the page.
 //$("#today").text(moment().format(MMMM, D, YYYY));  
-$("#currentDay").text(moment().format("MMMM D YYYY"));
-$(document).readyfunction () {
+var todayDate = moment().format('dddd, MMM Do YYYY');
+$("#currentDay").html(todayDate); 
+
+$(document).ready(function () {
 //saveBtn
 $(".saveBtn").on("click", function () {
-  
-  var value = $(this).siblings(".description").val();
-    var time = $(this).parent().attr("id");
-
+  var value = $(this).siblings('.description').val();
+    var time = $(this).parent().attr('id');
     localStorage.setItem(time, value);
 })
-}
+
   //local storage data
   $("#hour-9 .description").val(localStorage.getItem("hour-9"));
   $("#hour-10 .description").val(localStorage.getItem("hour-10"));
@@ -29,7 +32,7 @@ $(".saveBtn").on("click", function () {
 function timeTracker() {
   //number of hours.
   var currentTime = moment().hour();
-  
+} 
   //loop over time blocks
   $(".time-block").each(function () {
     var blockHour = parseInt($(this).attr("id").split("-")[1]);
@@ -69,3 +72,4 @@ function timeTracker() {
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
   //
+)
