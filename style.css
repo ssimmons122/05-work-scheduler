@@ -12,8 +12,8 @@ textarea {
   padding: 10px;
 }
 
-.description {
-  white-space: pre-wrap;
+#today {
+  color: black
 }
 
 .time-block {
