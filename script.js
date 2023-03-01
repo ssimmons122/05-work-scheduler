@@ -1,13 +1,16 @@
 // html and css first
-setInterval(function() {
-  $('#time-display').text(dayjs().format('MMM D YYYY, h:mm:ss'));}, 1000);
-  function checkCurrentHour() {}
+//setInterval(function() {
+  //$('#time-display').text(dayjs().format('MMM D YYYY, h:mm:ss'));}, 1000);
+  //function checkCurrentHour() {}
 
 
 // TODO: Add code to display the current date in the header of the page.
-//$("#today").text(moment().format(MMMM, D, YYYY));  
-var todayDate = moment().format('dddd, MMM Do YYYY');
-$("#currentDay").html(todayDate); 
+//$("#today").text(moment().format(LLLL)); 
+//console.log(moment(#today).format(LLLL));
+
+
+var todayDate = moment().format('LLLL');
+  $("#currentDay").html(todayDate); 
 
 $(document).ready(function () {
 //saveBtn
@@ -35,8 +38,9 @@ function timeTracker() {
 } 
   //loop over time blocks
   $(".time-block").each(function () {
-    var blockHour = parseInt($(this).attr("id").split("-")[1]);
-    
+    var blockHour = parseInt($(this).attr("id").split("hour")[1]);
+    console.log(blockHour, currentTime)
+
     //if the current hour is greater than the block hour, add the past class
     if (blockHour > currentTime) {
       $(this).addClass("past");
